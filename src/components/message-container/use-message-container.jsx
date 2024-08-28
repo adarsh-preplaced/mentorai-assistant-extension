@@ -148,7 +148,9 @@ const useMessageContainer = () => {
       const res = await axios.get(
         `${
           import.meta.env.VITE_PREPLACED_BACKEND_AI_URL
-        }/extension/get_conversation_messages?user_id=recE6DvZMSfXoxU20&mentor_ai_id=recdIrEzeo6GIXB2C`
+        }/extension/get_conversation_messages?user_id=${
+          import.meta.env.VITE_CANDIDATE_RECORD_ID
+        }&mentor_ai_id=recdIrEzeo6GIXB2C`
       );
       const sortedMessages = res.data.sort(
         (a, b) => new Date(b.created_at) - new Date(a.created_at)

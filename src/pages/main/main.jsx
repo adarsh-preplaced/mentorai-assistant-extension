@@ -3,6 +3,7 @@ import React from "react";
 import MessageContainer from "../../components/message-container/message-container";
 import useMain from "./use-main";
 import "./main.css";
+import ChatHeader from "../../components/message-container/components/chat-header/chat-header";
 
 const Main = () => {
   const { showPopup, handleTogglePopup } = useMain();
@@ -28,6 +29,7 @@ const Main = () => {
             // className="w-[500px] h-[70vh] fixed bottom-[150px] right-[100px] z-[10000]"
             className="popup"
           >
+            <ChatHeader handleTogglePopup={handleTogglePopup} />
             <MessageContainer />
           </motion.div>
         )}

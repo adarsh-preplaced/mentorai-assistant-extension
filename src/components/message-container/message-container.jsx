@@ -67,7 +67,11 @@ const MessageContainer = () => {
           >
             {chatMessages.map((m, i) => {
               return (
-                <Message key={`${m.props.model.message}-${i}`} {...m.props}>
+                <Message
+                  key={`${m.props.model.message}-${i}`}
+                  {...m.props}
+                  // style={{ width: "450px" }}
+                >
                   {m.props.children}
                   <Message.CustomContent>
                     <ReactMarkdown
@@ -121,6 +125,9 @@ const MessageContainer = () => {
             placeholder="Type message here"
             onSend={handleSubmit}
             attachButton={false}
+            onKeyDownCapture={(e) => {
+              e.preventDefault();
+            }}
             // onKeyDown={handleKeyDown}
           />
         </ChatContainer>

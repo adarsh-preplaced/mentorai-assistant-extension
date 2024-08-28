@@ -21,4 +21,9 @@
   bottom: 15px;
   right: 100px;
   z-index: 10000;
+  box-shadow: 0px 4px 24px 0px rgba(0, 8, 46, 0.24);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  /* opacity: 0.5; */
 }
