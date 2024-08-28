@@ -37,7 +37,7 @@ const useMessageContainer = () => {
             direction: "incoming",
             position: "single",
           },
-          children: <Avatar src={eliotIco} name="Eliot" />,
+          children: <Avatar src={eliotIco} name="Eliot" size="32" />,
         },
       },
     ]);
@@ -65,7 +65,7 @@ const useMessageContainer = () => {
             direction: "outgoing",
             position: "single",
           },
-          children: <Avatar src={userIco} name="Eliot" />,
+          children: <Avatar src={userIco} name="Eliot" size="32" />,
         },
       },
     ]);

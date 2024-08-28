@@ -1,0 +1,24 @@
+.chatToggleBtn {
+  position: fixed; /* fixed position */
+  bottom: 0 !important; /* positioned at the bottom of the viewport */
+  right: 48px; /* 48px from the right of the viewport */
+  cursor: pointer; /* cursor changes to pointer on hover */
+  z-index: 10000; /* z-index to ensure element is on top */
+  transition: transform 0.5s ease-in-out; /* transition for smooth scaling */
+  height: 52px;
+  object-fit: cover;
+  z-index: 10001;
+}
+
+.chatToggleBtn:hover {
+  transform: scale(1.1); /* scale up to 110% on hover */
+}
+
+.popup {
+  width: 500px;
+  height: 95vh;
+  position: fixed;
+  bottom: 15px;
+  right: 100px;
+  z-index: 10000;
+}

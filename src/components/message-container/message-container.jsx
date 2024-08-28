@@ -13,6 +13,9 @@ import ReactMarkdown from "react-markdown";
 import useMessageContainer from "./use-message-container";
 import LiveConversationContainer from "../live-conversation-container/live-conversation-container";
 
+import "./message-container.css";
+import ChatHeader from "./components/chat-header/chat-header";
+
 const MessageContainer = () => {
   const {
     chatMessages,
@@ -23,9 +26,34 @@ const MessageContainer = () => {
     isLiveMessageStreaming,
   } = useMessageContainer();
 
+  // const handleKeyDown = useCallback((event) => {
+  //   if (event.key === " ") {
+  //     event.preventDefault(); // Prevents the default action of the space key (pausing YouTube video)
+
+  //     // Manually insert a space character into the input box
+  //     const input = inputRef.current;
+  //     if (input) {
+  //       const { selectionStart, selectionEnd } = input;
+  //       const value = input.value;
+
+  //       // Insert a space character at the cursor's position
+  //       input.value =
+  //         value.slice(0, selectionStart) + " " + value.slice(selectionEnd);
+  //       // Move the cursor to the right of the inserted space
+  //       input.setSelectionRange(selectionStart + 1, selectionStart + 1);
+  //     }
+  //   }
+  // }, []);
+
   return (
-    <div className="h-full py-4 overflow-hidden">
-      <MainContainer className="rounded-lg pt-3">
+    <div
+      // className="h-full py-4 overflow-hidden"
+      className="chatWrapper"
+    >
+      <MainContainer
+        // className="rounded-[12px] pt-3 shadow-[0px_1px_2px_0px_rgba(10,13,20,0.03)]"
+        className="mainContainer"
+      >
         <ChatContainer>
           <MessageList
             typingIndicator={
@@ -34,6 +62,7 @@ const MessageContainer = () => {
               )
             }
             autoScrollToBottom={true}
+            autoScrollToBottomOnMount={true}
             loading={loading}
           >
             {chatMessages.map((m, i) => {
@@ -44,7 +73,8 @@ const MessageContainer = () => {
                   <Message.CustomContent>
                     <ReactMarkdown
                       rehypePlugins={[rehypeRaw]}
-                      className={`prose w-full max-w-[280px] text-[14px]/[22px] text-dashboard-gray-700 md:max-w-[311px]`}
+                      // className={`prose w-full max-w-[280px] text-[14px]/[22px] md:max-w-[311px]`}
+                      className={"prose markdown-prose"}
                       key={i}
                       components={{
                         code: ({ node, ...props }) => {
@@ -67,7 +97,13 @@ const MessageContainer = () => {
                           return <p {...props} />;
                         },
                         pre: ({ node, ...props }) => {
-                          return <pre {...props} className="max-w-[300px]" />;
+                          return (
+                            <pre
+                              {...props}
+                              // className="max-w-[300px]"
+                              style={{ maxWidth: "300px" }}
+                            />
+                          );
                         },
                       }}
                     >
@@ -86,6 +122,7 @@ const MessageContainer = () => {
             placeholder="Type message here"
             onSend={handleSubmit}
             attachButton={false}
+            // onKeyDown={handleKeyDown}
           />
         </ChatContainer>
       </MainContainer>

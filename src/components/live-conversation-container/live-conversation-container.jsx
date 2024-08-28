@@ -5,6 +5,7 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import rehypeRaw from "rehype-raw";
 import ReactMarkdown from "react-markdown";
+import "../message-container/message-container.css";
 
 const eliotIco =
   "https://firebasestorage.googleapis.com/v0/b/preplaced-upload-dev/o/raj_mentorai.svg?alt=media&token=ba4ad093-a354-4c6c-9649-8488ed6d0061";
@@ -55,7 +56,7 @@ const LiveConversationContainer = ({ liveMessages, userLiveMessage }) => {
             <Message.CustomContent>
               <ReactMarkdown
                 rehypePlugins={[rehypeRaw]}
-                className={`prose w-full max-w-[280px] text-[14px]/[22px] text-dashboard-gray-700 md:max-w-[311px]`}
+                className={`prose markdown-prose`}
                 key={i}
                 components={{
                   code: ({ node, ...props }) => {
@@ -78,7 +79,7 @@ const LiveConversationContainer = ({ liveMessages, userLiveMessage }) => {
                     return <p {...props} />;
                   },
                   pre: ({ node, ...props }) => {
-                    return <pre {...props} className="max-w-[300px]" />;
+                    return <pre {...props} style={{ maxWidth: "300px" }} />;
                   },
                 }}
               >
