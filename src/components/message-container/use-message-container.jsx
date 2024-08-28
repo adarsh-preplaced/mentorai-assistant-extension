@@ -1,6 +1,7 @@
 import { Avatar } from "@chatscope/chat-ui-kit-react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import scrapeData from "../../utils/scraper";
 // import { transformChatMessages } from "./utils/message-container";
 
 const useMessageContainer = () => {
@@ -91,7 +92,7 @@ const useMessageContainer = () => {
       mentor_ai_id: "recdIrEzeo6GIXB2C",
       page_context: {
         url: window.location.href,
-        content: "",
+        content: scrapeData(),
       },
     };
     fetch(
