@@ -5,13 +5,6 @@ import Main from "./pages/main/main";
 
 // Define the button component
 const App = () => {
-  useEffect(() => {
-    const metaTags = document.getElementsByTagName("meta");
-    for (let i = 0; i < metaTags.length; i++) {
-      console.log("Meta description:", metaTags[i].getAttribute("content"));
-    }
-  }, []);
-
   return <Main />;
 };
 

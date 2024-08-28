@@ -12,7 +12,6 @@ const SlideContentContainer = memo(
     role = "assistant",
     isLastConversation = false,
   }) => {
-    console.log("lessonDetails", lessonDetails);
     const { uiComponentsObject, lastSlideMessageHeight } =
       useSlideContentContainer({ lessonDetails, role });
 

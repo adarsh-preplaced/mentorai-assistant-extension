@@ -66,7 +66,6 @@ const MessageContainer = () => {
             loading={loading}
           >
             {chatMessages.map((m, i) => {
-              console.log("live", m);
               return (
                 <Message key={`${m.props.model.message}-${i}`} {...m.props}>
                   {m.props.children}

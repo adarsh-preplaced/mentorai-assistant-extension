@@ -37,7 +37,6 @@ const messages = [
 ];
 
 const LiveConversationContainer = ({ liveMessages, userLiveMessage }) => {
-  console.log("liveMessages", liveMessages);
 
   return (
     <>
@@ -49,7 +48,6 @@ const LiveConversationContainer = ({ liveMessages, userLiveMessage }) => {
         )
       )} */}
       {[...userLiveMessage, ...liveMessages].map((m, i) => {
-        console.log("live", m);
         return (
           <Message key={`${m.props.model.message}-${i}`} {...m.props}>
             {m.props.children}
