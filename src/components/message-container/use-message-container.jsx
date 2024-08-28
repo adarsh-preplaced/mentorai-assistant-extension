@@ -13,6 +13,8 @@ const useMessageContainer = () => {
   const eliotIco =
     "https://firebasestorage.googleapis.com/v0/b/preplaced-upload-dev/o/raj_mentorai.svg?alt=media&token=ba4ad093-a354-4c6c-9649-8488ed6d0061";
 
+  const userIco = "https://cdn-icons-png.flaticon.com/512/6596/6596121.png";
+
   const setLiveMessageFromAssistant = async (reader) => {
     const { done, value } = await reader.read();
     if (done) {
@@ -62,7 +64,7 @@ const useMessageContainer = () => {
             direction: "outgoing",
             position: "single",
           },
-          children: <Avatar src={eliotIco} name="Eliot" />,
+          children: <Avatar src={userIco} name="Eliot" />,
         },
       },
     ]);
@@ -130,7 +132,7 @@ const useMessageContainer = () => {
           },
           children: (
             <Avatar
-              src={eliotIco}
+              src={sent_by === "assistant" ? eliotIco : userIco}
               name={sent_by !== "assistant" ? "assistant" : "user"}
             />
           ),
