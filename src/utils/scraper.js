@@ -15,6 +15,11 @@ const config = {
                             "prefix": "Leetcode Question Description: "
                         },
                         {
+                            "jsPath": "#headlessui-popover-button-\\:r1o\\: > div > button",
+                            "toScrape": "innerText",
+                            "prefix": "Coding Language: "
+                        },
+                        {
                             "jsPath": "#editor > div.flex.flex-1.flex-col.overflow-hidden.pb-2 > div.flex-1.overflow-hidden > div > div > div.overflow-guard > div.monaco-scrollable-element.editor-scrollable.vs-dark.mac > div.lines-content.monaco-editor-background > div.view-lines.monaco-mouse-cursor-text",
                             "toScrape": "innerText",
                             "prefix": "User Code: "
