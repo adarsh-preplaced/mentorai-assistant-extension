@@ -10,12 +10,12 @@ const config = {
                     "urlRegex": "leetcode.com/problems/*",
                     "content": [
                         {
-                            "jsPath": "div.flex.w-full.flex-1.flex-col.gap-4.overflow-y-auto.px-4.py-5 > div.elfjS",
+                            "jsPath": "div > div.flex.w-full.flex-1.flex-col.gap-4.overflow-y-auto.px-4.py-5",
                             "toScrape": "innerText",
                             "prefix": "Leetcode Question Description: "
                         },
                         {
-                            "jsPath": "#headlessui-popover-button-\\:r1o\\: > div > button",
+                            "jsPath": "#headlessui-popover-button-\\:r8l\\: > div > button",
                             "toScrape": "innerText",
                             "prefix": "Coding Language: "
                         },
@@ -81,11 +81,13 @@ export default function scrapeData() {
         let patternFound = false;
         patterns.forEach(pattern => {
             if (urlMatches(pattern.urlRegex)) {
+                console.log("url pattern matched: ", pattern.urlRegex)
                 pattern.content.forEach(item => {
                     const elements = document.querySelectorAll(item.jsPath);
+                    console.log("content section ", item.prefix, elements)
                     elements.forEach(element => {
-                        const data = item.toScrape === "innerText" ? element.innerText : element.innerHTML;
-                        console.log(item.prefix + data.trim());
+                        const data = item.prefix + (item.toScrape === "innerText" ? element.innerText : element.innerHTML);
+                        console.log(data.trim());
                         scrapedData+=data+"\n";
                         patternFound = true;
                     });
@@ -96,8 +98,8 @@ export default function scrapeData() {
             config.domains[currentHost].default.forEach(item => {
                 const elements = document.querySelectorAll(item.jsPath);
                 elements.forEach(element => {
-                    const data = item.toScrape === "innerText" ? element.innerText : element.innerHTML;
-                    console.log(item.prefix + data.trim());
+                    const data = item.prefix +  (item.toScrape === "innerText" ? element.innerText : element.innerHTML);
+                    console.log(data.trim());
                     scrapedData+=data+"\n";
                 });
             });
