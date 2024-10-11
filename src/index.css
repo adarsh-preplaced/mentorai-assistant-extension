@@ -1,74 +1,99 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Inter";
-}
-
-b,
-strong {
-  font-weight: bold;
-}
-
-li,
-ol,
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  list-style-position: inside; /* Optional: to control the position of the bullets */
-  line-height: 1.2; /* Adjust line height as needed */
-}
-
-a {
-  text-decoration: none;
-}
-
-.cs-message--incoming .cs-message__content {
-  background-color: #f5f7fa !important;
-  border: 1px solid rgb(225, 228, 234, 0.5) !important;
-}
-
-.cs-message--outgoing .cs-message__content {
-  background-color: #fff !important;
-  border: 1px solid rgb(225, 228, 234, 0.5) !important;
-}
-
-.cs-message-input__content-editor-wrapper {
-  background: #fff !important;
-  padding-left: 0px !important;
-}
-
-.cs-message-input__content-editor {
-  background: #fff !important;
-}
-
-.cs-main-container {
-  border: none !important;
-}
-
-/* Markdown classes */
-
-.prose code {
-  display: block;
-  background: #212121;
-  color: #fff;
-  padding: 4px 12px;
-  border-radius: 4px;
-  margin: 8px 0px;
-}
-
-.prose code::before {
-  content: "";
-}
-
-.prose code::after {
-  content: "";
-}
-
-.prose :where(hr):not(:where([class~="not-prose"] *)) {
-  margin-top: 14px;
-  margin-bottom: 14px;
+.preplaced-extension{
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter";
+  }
+  
+  b,
+  strong {
+    font-weight: bold;
+  }
+  
+  li,
+  ol,
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style-position: inside; /* Optional: to control the position of the bullets */
+    line-height: 1.2; /* Adjust line height as needed */
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .cs-message--incoming .cs-message__content {
+    background-color: #f5f7fa !important;
+    border: 1px solid rgb(225, 228, 234, 0.5) !important;
+  }
+  
+  .cs-message--outgoing .cs-message__content {
+    background-color: #fff !important;
+    border: 1px solid rgb(225, 228, 234, 0.5) !important;
+  }
+  
+  .cs-message-input__content-editor-wrapper {
+    background: #fff !important;
+    padding-left: 0px !important;
+  }
+  
+  .cs-message__content{
+    white-space: normal !important;
+  }
+  
+  .cs-message-input__content-editor {
+    background: #fff !important;
+  }
+  
+  .cs-main-container {
+    border: none !important;
+  }
+  
+  /* Markdown classes */
+  
+  .prose code {
+    display: inline-flex;
+    background-color: rgb(97 97 97 / 22%);
+    color: #dd8820;
+    max-width: 300px;
+    border-radius: 4px;
+    padding: 0px 3px;
+    overflow-x: auto;
+    margin: 0;
+    line-height: 1.8;
+  }
+  
+  /* .prose code::before {
+    content: "";
+  }
+  
+  .prose code::after {
+    content: "";
+  } */
+  
+  .prose :where(hr):not(:where([class~="not-prose"] *)) {
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+  
+  h3{
+    color: unset;
+  }
+  
+  h4{
+    color: unset;
+  }
+  
+  h2{
+    color: unset;
+  }
+  
+  li {
+    line-height: 1.8;
+  }
 }
